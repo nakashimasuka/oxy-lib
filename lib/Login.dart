@@ -100,7 +100,7 @@ class _LoginState extends State<Login> {
             ),
           ),
           SizedBox(
-            height: 130,
+            height: 80,
           ),
           FlatButton(
               onPressed: () {

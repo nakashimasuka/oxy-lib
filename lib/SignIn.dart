@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'mainPage.dart';
+import 'Login.dart';
 
 class SignIn extends StatefulWidget {
   final String name;
@@ -82,6 +83,24 @@ class _SignInState extends State<SignIn> {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(
+                left: 30.0, right: 30.0, top: 15, bottom: 0),
+            child: Container(
+              height: 45,
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: const BorderRadius.all(
+                        const Radius.circular(100.0),
+                      ),
+                    ),
+                    labelText: 'Confirm password',
+                    hintText: 'Enter your the same password'),
+              ),
+            ),
+          ),
           FlatButton(
             onPressed: () {
               //TODO FORGOT PASSWORD SCREEN GOES HERE
@@ -111,7 +130,9 @@ class _SignInState extends State<SignIn> {
             child: FlatButton(
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => MainPage(name: nameController.text)));
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => MainPage(name: nameController.text)));
               },
               child: Text(
                 'SignIn',
@@ -120,9 +141,16 @@ class _SignInState extends State<SignIn> {
             ),
           ),
           SizedBox(
-            height: 130,
+            height: 30,
           ),
-          Text('New User? Create Account')
+          FlatButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => Login()));
+              },
+              child: Text('Already registered? SignIn'))
         ],
       ),
     );
