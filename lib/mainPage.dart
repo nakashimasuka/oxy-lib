@@ -6,6 +6,10 @@ import 'Infos.dart';
 import 'Switch.dart';
 
 class MainPage extends StatefulWidget {
+  final String name;
+
+  MainPage({Key key, this.name}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() {
     return _MainPageState();
@@ -48,7 +52,7 @@ class _MainPageState extends State<MainPage> {
           margin: new EdgeInsets.only(left: 5.0, bottom: 5.0, top: 5.0),
         ),
         title: Text(
-          "Oxy'lib",
+          "${widget.name}",
           style: TextStyle(color: Colors.black54),
         ),
         actions: <Widget>[

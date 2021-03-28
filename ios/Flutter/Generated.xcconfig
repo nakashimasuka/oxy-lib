@@ -1,8 +1,8 @@
 // This is a generated file; do not edit or check into version control.
 FLUTTER_ROOT=/Users/sofian/flutter
-FLUTTER_APPLICATION_PATH=/Users/sofian/Downloads/oxyfree-mobapp-master/oxyfree_mobapp_v2
+FLUTTER_APPLICATION_PATH=/Users/sofian/Desktop/oxylib
 COCOAPODS_PARALLEL_CODE_SIGN=true
-FLUTTER_TARGET=/Users/sofian/Downloads/oxyfree-mobapp-master/oxyfree_mobapp_v2/lib/main.dart
+FLUTTER_TARGET=/Users/sofian/Desktop/oxylib/lib/main.dart
 FLUTTER_BUILD_DIR=build
 SYMROOT=${SOURCE_ROOT}/../build/ios
 FLUTTER_BUILD_NAME=1.0.0
@@ -12,4 +12,4 @@ DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==
 DART_OBFUSCATION=false
 TRACK_WIDGET_CREATION=true
 TREE_SHAKE_ICONS=false
-PACKAGE_CONFIG=/Users/sofian/Downloads/oxyfree-mobapp-master/oxyfree_mobapp_v2/.dart_tool/package_config.json
+PACKAGE_CONFIG=/Users/sofian/Desktop/oxylib/.dart_tool/package_config.json

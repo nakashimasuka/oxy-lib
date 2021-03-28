@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'mainPage.dart';
+import 'SignIn.dart';
 
-class Menu extends StatefulWidget {
+class Login extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _MenuState();
+    return _LoginState();
   }
 }
 
-class _MenuState extends State<Menu> {
+class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
+    TextEditingController nameController = new TextEditingController();
+
     return new Scaffold(
       body: Column(
         children: <Widget>[
@@ -28,21 +31,22 @@ class _MenuState extends State<Menu> {
             child: Container(
               height: 45,
               child: TextField(
+                controller: nameController,
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                        const Radius.circular(100.0),
-                      ),
+                  border: OutlineInputBorder(
+                    borderRadius: const BorderRadius.all(
+                      const Radius.circular(100.0),
                     ),
-                    labelText: 'Email',
-                    hintText: 'Enter valid email id as abc@gmail.com'),
+                  ),
+                  labelText: 'Full name',
+                  hintText: 'Enter your full name',
+                ),
               ),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(
                 left: 30.0, right: 30.0, top: 15, bottom: 0),
-            //padding: EdgeInsets.symmetric(horizontal: 15),
             child: Container(
               height: 45,
               child: TextField(
@@ -59,9 +63,7 @@ class _MenuState extends State<Menu> {
             ),
           ),
           FlatButton(
-            onPressed: () {
-              //TODO FORGOT PASSWORD SCREEN GOES HERE
-            },
+            onPressed: () {},
             child: Text(
               'Forgot Password ?',
               style: TextStyle(color: Colors.blueGrey, fontSize: 15),
@@ -86,8 +88,10 @@ class _MenuState extends State<Menu> {
                 ]),
             child: FlatButton(
               onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => MainPage()));
+                if (nameController.text.isNotEmpty) {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => MainPage(name: nameController.text)));
+                }
               },
               child: Text(
                 'Login',
@@ -98,43 +102,14 @@ class _MenuState extends State<Menu> {
           SizedBox(
             height: 130,
           ),
-          Text('New User? Create Account')
+          FlatButton(
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => SignIn(name: nameController.text)));
+              },
+              child: Text('New User? Create Account'))
         ],
       ),
     );
   }
 }
-/*Container(
-        child: Column(
-          children: <Widget>[
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: RaisedButton(
-                    padding: EdgeInsets.all(10.0),
-                    color: Colors.white,
-                    child: Column(
-                      children: <Widget>[
-                        Icon(Icons.favorite, size: 100.0, color: Colors.red),
-                        Text("Régulateur")
-                      ],
-                    ),
-                    onPressed: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                        return MainPage();
-                      }));
-                    },
-                  )
-                ),
-              ],
-            ),
-          ],
-        ),
-      )
-    );
-  }
-}*/
